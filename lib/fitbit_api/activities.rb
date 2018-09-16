@@ -61,7 +61,7 @@ module FitbitAPI
 
       # move param values from top-level opts into :params sub-hash
       param_defaults.each do |key, default_val|
-        opts[:params][key] = opts.key?(key) ? opts.key?(key) : default_val
+        opts[:params][key] = opts.key?(key) ? opts[key] : default_val
       end
 
       get("user/#{user_id}/activities/list.json", opts)
